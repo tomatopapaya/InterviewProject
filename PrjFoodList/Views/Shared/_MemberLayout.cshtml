@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 美食清單</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        @*navbar為導覽列 navbar-inverse為黑底灰字*@
+        <div class="container">
+            @*container為可自適應寬的容器*@
+            <div class="navbar-header">
+                @*navbar-header導覽列標頭 類似 tr 效果*@
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("美食餐廳大全-會員專區", "Index", "Member", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("登出", "Logout", "Home", new { @class = "btn btn-primary" })</li>
+                    @*<li><a herf="#" class="btn btn-default">註冊</a></li>*@
+                    @*<li><a herf="#" class="btn btn-primary">登入</a></li>*@
+                    <li><a herf="#" class="btn btn-success">產品查詢</a></li>
+                    <li><a herf="#" class="btn btn-danger">我的最愛</a></li>
+                    <li><a href="#">@Session["Welcome"]</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 美食網頁資訊網</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

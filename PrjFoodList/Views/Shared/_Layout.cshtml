@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 美食清單</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @*navbar為導覽列 navbar-inverse為黑底灰字*@
+        <div class="container" style="display: flex; align-items: center;">
+            @*container為可自適應寬的容器*@
+            <div class="navbar-header">
+                @*navbar-header導覽列標頭 類似 tr 效果*@
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("美食餐廳大全", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color: white;" })
+            </div>
+            <div class="navbar-collapse collapse" style="margin-left: auto;">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("註冊", "Register", "Home", new { @class = "btn btn-default", @style = "padding: 0.5rem 1rem;" })</li>
+                    <li>@Html.ActionLink("登入", "Login", "Home", new { @class = "btn btn-primary", @style = "padding: 0.5rem 1rem; margin-left: 1rem; color: white;" })</li>
+                    @*<li><a herf="#" class="btn btn-default">註冊</a></li>*@
+                    @*<li><a herf="#" class="btn btn-primary">登入</a></li>*@
+                    <li><a herf="#" class="btn btn-success" style="padding: 0.5rem 1rem; margin-left: 1rem; color: white;">產品查詢</a></li>
+                    <li><a herf="#" class="btn btn-danger" style="padding: 0.5rem 1rem; margin-left: 1rem; color: white;">我的最愛</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 美食網頁資訊網</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
