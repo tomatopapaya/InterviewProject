@@ -14,7 +14,7 @@
     <Key>
       <PropertyRef Name="fId" />
     </Key>
-    <Property Name="fId" Type="int" Nullable="false" />
+    <Property Name="fId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fUser" Type="nvarchar" MaxLength="50" />
     <Property Name="fPwd" Type="nvarchar" MaxLength="50" />
     <Property Name="fName" Type="nvarchar" MaxLength="50" />

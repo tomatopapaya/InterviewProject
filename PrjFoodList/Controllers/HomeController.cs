@@ -42,5 +42,27 @@ namespace PrjFoodList.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Register(Member Member)
+        {
+            if (ModelState.IsValid == false)
+            {
+                return View();
+            }
+            var member = db.Member
+                .Where(m => m.fUser == Member.fUser)
+                .FirstOrDefault();
+
+            if (member == null)
+            {
+                db.Member.Add(Member);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Message = "此帳號已有人使用，註冊失敗";
+
+            return View();
+        }
     }
 }
