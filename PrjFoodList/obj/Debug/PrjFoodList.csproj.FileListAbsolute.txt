@@ -84,3 +84,13 @@ C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\obj\Debug\PrjFo
 C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\obj\Debug\PrjFoodList.csproj.CopyComplete
 C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\obj\Debug\PrjFoodList.dll
 C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\obj\Debug\PrjFoodList.pdb
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\EntityFramework.dll
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\EntityFramework.SqlServer.dll
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\PagedList.dll
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\PagedList.Mvc.dll
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\EntityFramework.xml
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\EntityFramework.SqlServer.xml
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\PagedList.xml
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\PagedList.Mvc.xml
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\ASUS\Desktop\好吃美食記錄\PrjFoodList\PrjFoodList\bin\zh-Hant\EntityFramework.SqlServer.resources.dll

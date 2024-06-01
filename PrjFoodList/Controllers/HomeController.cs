@@ -1,20 +1,28 @@
 ﻿using PrjFoodList.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-
+using PagedList;
 
 namespace PrjFoodList.Controllers
 {
     public class HomeController : Controller
     {
+        foodEntities db = new foodEntities();
+        int pagesize = 5;
 
-        public ActionResult Index()
+        public ActionResult Index(string searchString, int page = 1)
         {
-            return View();
+            int currentPage = page < 1 ? 1 : page;
+            var foods = db.food.OrderBy(m => m.fDate).ToList();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                foods = db.food.OrderBy(m => m.fDate).Where(s => s.fTitle.Contains(searchString)).ToList();
+            }
+            var result = foods.ToPagedList(currentPage, pagesize);
+            return View(result);
         }
+
 
         public ActionResult About()
         {
