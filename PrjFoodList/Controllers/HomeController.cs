@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using PagedList;
+using System.Web.Security;
 
 namespace PrjFoodList.Controllers
 {
@@ -68,6 +69,20 @@ namespace PrjFoodList.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(string fUser, string fPwd)
+        {
+            var member = db.Member.Where(m => m.fUser == fUser && m.fPwd == fPwd).FirstOrDefault();
+            if (member == null)
+            {
+                ViewBag.Message = "帳密錯誤，登入失敗";
+                return View();
+            }
+            Session["Welcome"] = member.fName + "歡迎光臨";
+            FormsAuthentication.RedirectFromLoginPage(fUser, true);
+            return RedirectToAction("Index", "Member");
         }
     }
 }
