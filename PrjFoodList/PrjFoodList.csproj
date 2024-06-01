@@ -133,25 +133,25 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\food.cs">
-      <DependentUpon>LocalDB.tt</DependentUpon>
+      <DependentUpon>FoodModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LocalDB.Context.cs">
+    <Compile Include="Models\FoodModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalDB.Context.tt</DependentUpon>
+      <DependentUpon>FoodModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LocalDB.cs">
+    <Compile Include="Models\FoodModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalDB.tt</DependentUpon>
+      <DependentUpon>FoodModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LocalDB.Designer.cs">
+    <Compile Include="Models\FoodModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocalDB.edmx</DependentUpon>
+      <DependentUpon>FoodModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Member.cs">
-      <DependentUpon>LocalDB.tt</DependentUpon>
+      <DependentUpon>FoodModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,23 +172,23 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Models\LocalDB.edmx">
+    <EntityDeploy Include="Models\FoodModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LocalDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>FoodModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\LocalDB.edmx.diagram">
-      <DependentUpon>LocalDB.edmx</DependentUpon>
+    <Content Include="Models\FoodModel.edmx.diagram">
+      <DependentUpon>FoodModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Models\LocalDB.Context.tt">
+    <Content Include="Models\FoodModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LocalDB.Context.cs</LastGenOutput>
-      <DependentUpon>LocalDB.edmx</DependentUpon>
+      <DependentUpon>FoodModel.edmx</DependentUpon>
+      <LastGenOutput>FoodModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\LocalDB.tt">
+    <Content Include="Models\FoodModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LocalDB.edmx</DependentUpon>
-      <LastGenOutput>LocalDB.cs</LastGenOutput>
+      <DependentUpon>FoodModel.edmx</DependentUpon>
+      <LastGenOutput>FoodModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
