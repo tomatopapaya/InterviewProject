@@ -198,6 +198,14 @@
       <DependentUpon>FoodModel.edmx</DependentUpon>
       <LastGenOutput>FoodModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Photos\台積電.JPG" />
+    <Content Include="Photos\星巴克.jpg" />
+    <Content Include="Photos\海壽司.jpg" />
+    <Content Include="Photos\海底撈.jpg" />
+    <Content Include="Photos\爭鮮.jpg" />
+    <Content Include="Photos\遊戲橘子.jpg" />
+    <Content Include="Photos\麥當勞.jpg" />
+    <Content Include="Photos\黃金天主堂.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -225,6 +233,7 @@
     <Content Include="Views\Shared\_LayoutMember.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

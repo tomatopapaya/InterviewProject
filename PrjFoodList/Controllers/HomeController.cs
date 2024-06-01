@@ -25,8 +25,12 @@ namespace PrjFoodList.Controllers
             return View(result);
         }
 
-        public FileContentResult GetImage(int fId)
+        public ActionResult Create()
+        {
+            return View();
+        }
 
+        public FileContentResult GetImage(int fId)
         {
             food requestedPhoto = db.food.FirstOrDefault(m => m.fId == fId);
 
