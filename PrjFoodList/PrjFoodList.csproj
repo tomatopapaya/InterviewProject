@@ -234,6 +234,7 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Member\Edit.cshtml" />
     <Content Include="Views\Member\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>

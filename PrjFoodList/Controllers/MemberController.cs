@@ -59,6 +59,11 @@ namespace PrjFoodList.Controllers
                 Debug.WriteLine("i get it");
                 return RedirectToAction("Index");
             }
+            else
+            {
+                db.food.Add(resturant);
+                db.SaveChanges();
+            }
 
             return View(resturant);
         }
@@ -71,7 +76,47 @@ namespace PrjFoodList.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(int id)
+        {
+            var resturant = db.food.Where(m => m.fId == id).FirstOrDefault();
+            return View(resturant);
+        }
 
+        [HttpPost]
+        public ActionResult Edit(string fTitle, string fAddress, DateTime fDate, HttpPostedFileBase photo, string ftype, string UserID)
+        {
+            var resturant = db.food.Where(m => m.fTitle == fTitle).FirstOrDefault();
+            resturant.fTitle = fTitle;
+            resturant.fAddress = fAddress;
+            resturant.fDate = fDate;
+            resturant.ftype = ftype;
+            resturant.UserID = UserID;
+            //檔案上傳
+            if (photo != null)
+            {
+                if (ModelState.IsValid)
+                {
+                    if (photo != null)
+                    {
+
+                        resturant.fImg = new byte[photo.ContentLength];
+                        photo.InputStream.Read(resturant.fImg, 0, photo.ContentLength);
+                    }
+                }
+
+                db.food.Add(resturant);
+                db.SaveChanges();
+                Debug.WriteLine("i get it");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                db.food.Add(resturant);
+                db.SaveChanges();
+            }
+
+            return View(resturant);
+        }
 
         public ActionResult Logout()
         {

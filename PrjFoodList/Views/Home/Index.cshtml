@@ -86,12 +86,26 @@
                         @DateTime.Parse(item.fDate.ToString()).ToShortDateString()
                     </td>
                     <td>
-                        <a href="https://www.google.com.tw/maps/place/@item.fAddress" class="btn btn-info" target="_blank">路線規劃</a>
+                        @if (User.Identity.Name != "")
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id=item.fId }, new { @class = "btn btn-danger" })
+                        }
+                        else
+                        {
+                            <a href="https://www.google.com.tw/maps/place/@item.fAddress" class="btn btn-info" target="_blank">路線規劃</a>
+                        }
                     </td>
                     <td>
                         @*@Html.ActionLink("Edit", "Edit", new { id=item.fId }) |*@
                         @*@Html.ActionLink("Details", "Details", new { id=item.fId }) |*@
-                        @Html.ActionLink("Delete", "Delete", new { id = item.fId }, new { onclick = "return confirm('確定刪除嗎?')", @class = "btn btn-danger" })
+                        @if (User.Identity.Name != "")
+                        {
+                            @Html.ActionLink("Delete", "Delete", new { id = item.fId }, new { onclick = "return confirm('確定刪除嗎?')", @class = "btn btn-danger" })
+                        }
+                        else 
+                        {
+                            <button>我的最愛</button>
+                        }
                     </td>
                 </tr>
             }
