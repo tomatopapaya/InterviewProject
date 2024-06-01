@@ -25,6 +25,10 @@ namespace PrjFoodList.Controllers
             return View("../Home/Index", "_LayoutMember", result);
         }
 
-
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Home");
+        }
     }
 }

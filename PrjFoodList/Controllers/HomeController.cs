@@ -86,5 +86,7 @@ namespace PrjFoodList.Controllers
             FormsAuthentication.RedirectFromLoginPage(fUser, true);
             return RedirectToAction("Index", "Member");
         }
+
+        
     }
 }
