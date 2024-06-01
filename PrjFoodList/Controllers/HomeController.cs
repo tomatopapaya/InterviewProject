@@ -61,6 +61,14 @@ namespace PrjFoodList.Controllers
             return View(resturant);
         }
 
+        public ActionResult Delete(int id)
+        {
+            var restaurant = db.food.Where(m => m.fId == id).FirstOrDefault();
+            db.food.Remove(restaurant);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         public FileContentResult GetImage(int fId)
         {
             food requestedPhoto = db.food.FirstOrDefault(m => m.fId == fId);
