@@ -23,19 +23,19 @@ namespace PrjFoodList.Controllers
             return View(result);
         }
 
+        public FileContentResult GetImage(int fId)
 
-        public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            food requestedPhoto = db.food.FirstOrDefault(m => m.fId == fId);
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (requestedPhoto != null)
+            {
+                return File(requestedPhoto.fImg, "image/jpeg");
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
