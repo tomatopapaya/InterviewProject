@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="foodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="food">
-    <Key>
-      <PropertyRef Name="fId" />
-    </Key>
-    <Property Name="fId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="fTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="fAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="fDate" Type="DateTime" Precision="0" />
-    <Property Name="fImg" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="Member">
     <Key>
       <PropertyRef Name="fId" />
@@ -21,7 +11,19 @@
     <Property Name="fEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="foodEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="food" EntityType="Self.food" />
     <EntitySet Name="Member" EntityType="Self.Member" />
+    <EntitySet Name="food" EntityType="foodModel.food" />
   </EntityContainer>
+  <EntityType Name="food">
+    <Key>
+      <PropertyRef Name="fId" />
+    </Key>
+    <Property Name="fId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fDate" Type="DateTime" Precision="0" />
+    <Property Name="ftype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fImg" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -26,48 +26,9 @@ namespace PrjFoodList.Controllers
             return View(result);
         }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
+       
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(string fTitle, string fAddress, DateTime fDate, HttpPostedFileBase photo)
-        {
-            food resturant = new food(); //food是表格
-            resturant.fTitle = fTitle;
-            resturant.fAddress = fAddress;
-            resturant.fDate = fDate;
-            //檔案上傳
-            if (photo != null)
-            {
-                if (ModelState.IsValid)
-                {
-                    if (photo != null)
-                    {
-
-                        resturant.fImg = new byte[photo.ContentLength];
-                        photo.InputStream.Read(resturant.fImg, 0, photo.ContentLength);
-                    }
-                }
-
-                db.food.Add(resturant);
-                db.SaveChanges();
-                Debug.WriteLine("i get it");
-                return RedirectToAction("Index");
-            }
-
-            return View(resturant);
-        }
-
-        public ActionResult Delete(int id)
-        {
-            var restaurant = db.food.Where(m => m.fId == id).FirstOrDefault();
-            db.food.Remove(restaurant);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
 
         public FileContentResult GetImage(int fId)
         {

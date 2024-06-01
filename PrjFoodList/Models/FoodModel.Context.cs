@@ -25,7 +25,7 @@ namespace PrjFoodList.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<food> food { get; set; }
         public virtual DbSet<Member> Member { get; set; }
+        public virtual DbSet<food> food { get; set; }
     }
 }

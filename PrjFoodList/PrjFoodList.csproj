@@ -234,10 +234,10 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Member\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Member\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

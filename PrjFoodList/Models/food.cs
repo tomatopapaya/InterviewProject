@@ -18,6 +18,8 @@ namespace PrjFoodList.Models
         public string fTitle { get; set; }
         public string fAddress { get; set; }
         public Nullable<System.DateTime> fDate { get; set; }
+        public string ftype { get; set; }
         public byte[] fImg { get; set; }
+        public string UserID { get; set; }
     }
 }

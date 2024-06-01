@@ -16,17 +16,21 @@
 
     <div style="display: flex; justify-content: flex-end; align-items: center">
         <p class="box">
-            @Html.ActionLink("美食新增", "Create")
+
+            @if (User.Identity.Name != "")
+            {
+                @Html.ActionLink("美食新增", "Create")
+            }
             @using (Html.BeginForm("Index", "Home", FormMethod.Get))
             {
-            <p>
-                搜尋: @Html.TextBox("searchString")
-                <input type="submit" value="查詢" />
-            </p>
-        }
-
-        </div>
+                <p>
+                    搜尋: @Html.TextBox("searchString")
+                    <input type="submit" value="查詢" />
+                </p>
+            }
     </div>
+
+</div>
 
     @*<p>@Html.CheckBox("chk01", true, null)學生</p>
         <p>@Html.CheckBox("chk02", false, null)上班族</p>*@
@@ -73,6 +77,7 @@
                         </a>
                     </td>
                     <td>
+                        @item.ftype
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.fAddress)

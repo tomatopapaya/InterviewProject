@@ -1,17 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="foodModelStoreContainer" CdmEntityContainer="foodEntities">
-    <EntitySetMapping Name="food">
-      <EntityTypeMapping TypeName="foodModel.food">
-        <MappingFragment StoreEntitySet="food">
-          <ScalarProperty Name="fId" ColumnName="fId" />
-          <ScalarProperty Name="fTitle" ColumnName="fTitle" />
-          <ScalarProperty Name="fAddress" ColumnName="fAddress" />
-          <ScalarProperty Name="fDate" ColumnName="fDate" />
-          <ScalarProperty Name="fImg" ColumnName="fImg" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Member">
       <EntityTypeMapping TypeName="foodModel.Member">
         <MappingFragment StoreEntitySet="Member">
@@ -20,6 +9,19 @@
           <ScalarProperty Name="fPwd" ColumnName="fPwd" />
           <ScalarProperty Name="fName" ColumnName="fName" />
           <ScalarProperty Name="fEmail" ColumnName="fEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="food">
+      <EntityTypeMapping TypeName="foodModel.food">
+        <MappingFragment StoreEntitySet="food">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="fImg" ColumnName="fImg" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="fDate" ColumnName="fDate" />
+          <ScalarProperty Name="fAddress" ColumnName="fAddress" />
+          <ScalarProperty Name="fTitle" ColumnName="fTitle" />
+          <ScalarProperty Name="fId" ColumnName="fId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

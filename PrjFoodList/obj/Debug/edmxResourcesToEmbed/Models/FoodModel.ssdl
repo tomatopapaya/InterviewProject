@@ -8,7 +8,9 @@
     <Property Name="fTitle" Type="nvarchar" MaxLength="50" />
     <Property Name="fAddress" Type="nvarchar" MaxLength="50" />
     <Property Name="fDate" Type="date" />
+    <Property Name="ftype" Type="nvarchar" MaxLength="50" />
     <Property Name="fImg" Type="image" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Member">
     <Key>
