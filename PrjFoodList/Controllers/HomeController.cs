@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Web.Mvc;
 using PagedList;
+using System.Web;
 using System.Web.Security;
 
 namespace PrjFoodList.Controllers
@@ -81,6 +82,7 @@ namespace PrjFoodList.Controllers
                 return View();
             }
             Session["Welcome"] = member.fName + "歡迎光臨";
+
             FormsAuthentication.RedirectFromLoginPage(fUser, true);
             return RedirectToAction("Index", "Member");
         }
