@@ -37,5 +37,10 @@ namespace PrjFoodList.Controllers
                 return null;
             }
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }
