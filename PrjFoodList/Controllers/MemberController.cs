@@ -35,12 +35,12 @@ namespace PrjFoodList.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(string fTitle, string fAddress, DateTime fDate, HttpPostedFileBase photo, string ftype, string UserID)
+        public ActionResult Create(string fTitle, string fAddress, HttpPostedFileBase photo, string ftype, string UserID)
         {
             food resturant = new food(); //food是表格
             resturant.fTitle = fTitle;
             resturant.fAddress = fAddress;
-            resturant.fDate = fDate;
+            resturant.fDate = DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
             resturant.ftype = ftype;
             resturant.UserID = UserID;
             //檔案上傳
@@ -85,12 +85,12 @@ namespace PrjFoodList.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(string fTitle, string fAddress, DateTime fDate, HttpPostedFileBase photo, string ftype, string UserID)
+        public ActionResult Edit(string fTitle, string fAddress, HttpPostedFileBase photo, string ftype, string UserID)
         {
             var resturant = db.food.Where(m => m.fTitle == fTitle).FirstOrDefault();
             resturant.fTitle = fTitle;
             resturant.fAddress = fAddress;
-            resturant.fDate = fDate;
+            resturant.fDate = DateTime.ParseExact(DateTime.Now.ToString("yyyy-MM-dd"), "yyyy-MM-dd", null);
             resturant.ftype = ftype;
             resturant.UserID = UserID;
             //檔案上傳
