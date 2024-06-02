@@ -22,6 +22,8 @@ namespace PrjFoodList.Controllers
             {
                 foods = db.food.OrderBy(m => m.fDate).Where(m => m.fTitle.Contains(searchString)).ToList();
             }
+
+            foods = foods.Where(m => m.UserID == User.Identity.Name).ToList();
             var result = foods.ToPagedList(currentPage, pagesize);
             return View("../Home/Index", "_LayoutMember", result);
         }
@@ -103,18 +105,11 @@ namespace PrjFoodList.Controllers
                         photo.InputStream.Read(resturant.fImg, 0, photo.ContentLength);
                     }
                 }
+              
+            }
 
-                db.food.Add(resturant);
-                db.SaveChanges();
-                Debug.WriteLine("i get it");
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                db.food.Add(resturant);
-                db.SaveChanges();
-                return View(resturant);
-            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
             
         }
 
