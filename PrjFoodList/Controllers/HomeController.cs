@@ -16,6 +16,10 @@ namespace PrjFoodList.Controllers
 
         public ActionResult Index(string searchString, int page = 1)
         {
+            if(User.Identity.Name!= "") 
+            {
+                return RedirectToAction("Index","Member");
+            }
             int currentPage = page < 1 ? 1 : page;
             var foods = db.food.OrderBy(m => m.fDate).ToList();
             if (!String.IsNullOrEmpty(searchString))
