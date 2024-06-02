@@ -113,9 +113,9 @@ namespace PrjFoodList.Controllers
             {
                 db.food.Add(resturant);
                 db.SaveChanges();
+                return View(resturant);
             }
-
-            return View(resturant);
+            
         }
 
         public ActionResult Logout()
